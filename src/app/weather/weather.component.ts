@@ -35,7 +35,7 @@ export class WeatherComponent {
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         this.data = data;
       });
 
@@ -44,6 +44,7 @@ export class WeatherComponent {
     )
       .then((res) => res.json())
       .then((data) => {
+        this.list = [];
         data.list.map((item) => {
           let url = `http://openweathermap.org/img/w/${item.weather[0].icon}.png`;
           this.list.push({ src: url, data: item });
