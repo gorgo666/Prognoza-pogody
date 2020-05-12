@@ -1,0 +1,26 @@
+<section>
+  <label>Localizacja: </label>
+  <input [(ngModel)]="location" />
+  <button (click)="handleSearch()">Sprawdź</button>
+</section>
+
+<div class="city" *ngIf="data">
+  Prognoza pogody na 5dni co 3 godz. dla miasta {{ data.name }}
+</div>
+<div class="container">
+  <div *ngFor="let li of list">
+    <header>
+      <p>{{ li.data.dt_txt }}</p>
+      <p>{{ calculate(li.data.main.temp) }}°C</p>
+      <img [src]="li.src" alt="" />
+    </header>
+    <main>
+      <p>Temp. min. {{ calculate(li.data.main.temp_min) }}°C</p>
+      <p>Temp. max. {{ calculate(li.data.main.temp_max) }}°C</p>
+      <p>Zachmurzenie {{ li.data.clouds.all }}%</p>
+      <p>Wilgotność {{ li.data.main.humidity }}%</p>
+      <p>Ciśnienie {{ li.data.main.pressure }} hPa</p>
+      <p>Prędkość wiatru {{ li.data.wind.speed }} km/h</p>
+    </main>
+  </div>
+</div>
