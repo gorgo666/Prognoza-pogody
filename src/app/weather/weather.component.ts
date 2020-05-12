@@ -21,7 +21,7 @@ export class WeatherComponent {
       });
   };
 
-  ngOnInit() {
+  getLocation() {
     navigator.geolocation.getCurrentPosition(this.showPosition);
   }
 
