@@ -12,7 +12,7 @@ export class WeatherComponent {
 
   showPosition = (position) => {
     fetch(
-      `http://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=78f1c234eb92ec969fa49884c68825c5`
+      `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=78f1c234eb92ec969fa49884c68825c5`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -31,7 +31,7 @@ export class WeatherComponent {
 
   handleSearch() {
     fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${this.location}&appid=78f1c234eb92ec969fa49884c68825c5`
+      `https://api.openweathermap.org/data/2.5/weather?q=${this.location}&appid=78f1c234eb92ec969fa49884c68825c5`
     )
       .then((res) => res.json())
       .then((data) => {
